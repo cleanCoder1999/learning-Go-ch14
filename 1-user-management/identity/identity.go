@@ -35,6 +35,12 @@ func UserFromContextStruct(ctx context.Context) (string, bool) {
 type userKey int
 
 const (
+	// in Go, it is a common pattern to assign the first iota value in the constant block to
+	// _
+	// or
+	// to a constant value that indicates the value is invalid
+	//
+	// this makes it easy to detect that a variable has not been properly initialized
 	_ userKey = iota
 	key
 )
